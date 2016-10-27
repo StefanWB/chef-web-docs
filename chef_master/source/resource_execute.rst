@@ -319,8 +319,8 @@ The following arguments can be used with the ``not_if`` or ``only_if`` guard pro
 
    .. code-block:: ruby
 
-      not_if 'grep adam /etc/passwd', :environment => { 
-        'HOME' => '/home/adam' 
+      not_if 'grep adam /etc/passwd', :environment => {
+        'HOME' => '/home/adam'
       }
 
 ``:cwd``
@@ -528,11 +528,11 @@ The following example shows how to add a rule named ``test_rule`` to an IP table
 .. code-block:: ruby
 
    execute 'test_rule' do
-     command 'command_to_run 
-       --option value 
+     command 'command_to_run
+       --option value
        ...
-       --option value 
-       --source #{node[:name_of_node][:ipsec][:local][:subnet]} 
+       --option value
+       --source #{node[:name_of_node][:ipsec][:local][:subnet]}
        -j test_rule'
      action :nothing
    end
@@ -718,7 +718,7 @@ The following example shows how to use the ``search`` method in the Recipe DSL t
 where
 
 * the search will use both of the **execute** resources, unless the condition specified by the ``not_if`` commands are met
-* the ``environments`` property in the first **execute** resource is being used to define values that appear as variables in the OpenVPN configuration 
+* the ``environments`` property in the first **execute** resource is being used to define values that appear as variables in the OpenVPN configuration
 * the **template** resource tells the chef-client which template to use
 
 .. end_tag
@@ -731,7 +731,7 @@ where
 
 .. code-block:: ruby
 
-   execute 'enable ssh' do 
+   execute 'enable ssh' do
      command '/usr/sbin/systemsetup -setremotelogin on'
      not_if '/usr/sbin/systemsetup -getremotelogin | /usr/bin/grep On'
      action :run

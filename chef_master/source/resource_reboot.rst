@@ -207,7 +207,7 @@ The following example shows how to rename a computer, join a domain, and then re
      EOH
      not_if <<-EOH
        $ComputerSystem = gwmi win32_computersystem
-       ($ComputerSystem.Name -like '#{node['some_attribute_that_has_the_new_name']}') -and 
+       ($ComputerSystem.Name -like '#{node['some_attribute_that_has_the_new_name']}') -and
          $ComputerSystem.partofdomain)
      EOH
      notifies :reboot_now, 'reboot[Restart Computer]', :immediately

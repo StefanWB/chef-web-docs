@@ -820,7 +820,7 @@ A recipe should be clean and well-commented. For example:
    end
 
    directory '/srv/wordpress_demo/wp-content' do
-     user 'apache'  
+     user 'apache'
      action :create
    end
 

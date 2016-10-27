@@ -227,7 +227,7 @@ The following example shows how an if statement can be used with the ``platform?
      ruby_block 'copy libmysql.dll into ruby path' do
        block do
          require 'fileutils'
-         FileUtils.cp "#{node['mysql']['client']['lib_dir']}\\libmysql.dll", 
+         FileUtils.cp "#{node['mysql']['client']['lib_dir']}\\libmysql.dll",
            node['mysql']['client']['ruby_dir']
        end
        not_if { File.exist?("#{node['mysql']['client']['ruby_dir']}\\libmysql.dll") }
@@ -282,7 +282,7 @@ The following example shows how the **ruby_block** resource can be used to updat
    ruby_block 'edit etc hosts' do
      block do
        rc = Chef::Util::FileEdit.new('/etc/hosts')
-       rc.search_file_replace_line(/^127\.0\.0\.1 localhost$/, 
+       rc.search_file_replace_line(/^127\.0\.0\.1 localhost$/,
           '127.0.0.1 #{new_fqdn} #{new_hostname} localhost')
        rc.write_file
      end

@@ -287,8 +287,8 @@ The following arguments can be used with the ``not_if`` or ``only_if`` guard pro
 
    .. code-block:: ruby
 
-      not_if 'grep adam /etc/passwd', :environment => { 
-        'HOME' => '/home/adam' 
+      not_if 'grep adam /etc/passwd', :environment => {
+        'HOME' => '/home/adam'
       }
 
 ``:cwd``
@@ -321,7 +321,7 @@ To run a batch file that unzips and then moves Ruby, do something like:
 
    batch 'unzip_and_move_ruby' do
      code <<-EOH
-       7z.exe x #{Chef::Config[:file_cache_path]}/ruby-1.8.7-p352-i386-mingw32.7z  
+       7z.exe x #{Chef::Config[:file_cache_path]}/ruby-1.8.7-p352-i386-mingw32.7z
          -oC:\\source -r -y
        xcopy C:\\source\\ruby-1.8.7-p352-i386-mingw32 C:\\ruby /e /y
        EOH
@@ -342,7 +342,7 @@ or:
 
    batch 'unzip_and_move_ruby' do
      code <<-EOH
-       7z.exe x #{Chef::Config[:file_cache_path]}/ruby-1.8.7-p352-i386-mingw32.7z  
+       7z.exe x #{Chef::Config[:file_cache_path]}/ruby-1.8.7-p352-i386-mingw32.7z
          -oC:\\source -r -y
        xcopy C:\\source\\ruby-1.8.7-p352-i386-mingw32 C:\\ruby /e /y
        EOH
